@@ -1,5 +1,3 @@
-import React from "react";
-
 import Price1 from "../img/price1.jpg";
 import Price2 from "../img/price2.jpg";
 import Price3 from "../img/price3.jpg";

@@ -2,11 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import Image from "material-ui-image";
 import Typography from "@material-ui/core/Typography";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
-import { AccessAlarm, ThreeDRotation } from "@material-ui/icons";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,

@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.42eb9fce.chunk.css",
+    "main.js": "/static/js/main.ef80e261.chunk.js",
+    "main.js.map": "/static/js/main.ef80e261.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.df3cf6cb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.df3cf6cb.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.17f14ace.chunk.js": "/static/js/2.17f14ace.chunk.js",
+    "static/js/2.17f14ace.chunk.js.map": "/static/js/2.17f14ace.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.336eca6674f857a33cf322f851e4a379.js": "/precache-manifest.336eca6674f857a33cf322f851e4a379.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.42eb9fce.chunk.css.map": "/static/css/main.42eb9fce.chunk.css.map",
+    "static/js/2.17f14ace.chunk.js.LICENSE.txt": "/static/js/2.17f14ace.chunk.js.LICENSE.txt",
+    "static/media/baner1.jpg": "/static/media/baner1.cefa604e.jpg",
+    "static/media/carousel1.jpg": "/static/media/carousel1.a17616a8.jpg",
+    "static/media/carousel3.jpg": "/static/media/carousel3.6bb75c66.jpg",
+    "static/media/gallery1.jpg": "/static/media/gallery1.ca4a297f.jpg",
+    "static/media/gallery2.jpg": "/static/media/gallery2.5a118a66.jpg",
+    "static/media/gallery3.jpg": "/static/media/gallery3.a7b1f6dd.jpg",
+    "static/media/item1.jpg": "/static/media/item1.a7b1f6dd.jpg",
+    "static/media/item2.jpg": "/static/media/item2.53b4a58d.jpg",
+    "static/media/item3.jpg": "/static/media/item3.6ed8b6e1.jpg",
+    "static/media/item4.jpg": "/static/media/item4.c3e45218.jpg",
+    "static/media/item5.jpg": "/static/media/item5.d853792a.jpg",
+    "static/media/item6.jpg": "/static/media/item6.1fe55063.jpg",
+    "static/media/item7.jpg": "/static/media/item7.12f207c0.jpg",
+    "static/media/price1.jpg": "/static/media/price1.41238515.jpg",
+    "static/media/price3.jpg": "/static/media/price3.c56106fb.jpg",
+    "static/media/price4.jpg": "/static/media/price4.b42c48a6.jpg",
+    "static/media/price5.jpg": "/static/media/price5.60667182.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df3cf6cb.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.17f14ace.chunk.js",
+    "static/css/main.42eb9fce.chunk.css",
+    "static/js/main.ef80e261.chunk.js"
+  ]
+}

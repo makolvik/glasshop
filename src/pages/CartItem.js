@@ -1,13 +1,8 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
-
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
 import Grid from "@material-ui/core/Grid";
-
 import Typography from "@material-ui/core/Typography";
-
 import Button from "@material-ui/core/Button";
-
 import gallery1 from "../img/gallery1.jpg";
 
 const useStyles = makeStyles((theme) => ({

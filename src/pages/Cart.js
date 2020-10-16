@@ -1,31 +1,9 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Carouselmain from "../components/Carouselmain";
-import Baner from "../components/Baner";
-import Price1 from "../img/price1.jpg";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import Rating from "@material-ui/lab/Rating";
-import Barmenu from "../components/Appbar";
-import Box from "@material-ui/core/Box";
-import Map from "../components/Map";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-
-import logo from "../img/logo.jpg";
-import gallery1 from "../img/gallery1.jpg";
-import gallery2 from "../img/gallery2.jpg";
-import gallery3 from "../img/gallery3.jpg";
-import Goodslist from "../components/Goodslist";
-import Goodsitemwithprice from "../components/Goodslistwithprice";
-import Gallery from "react-grid-gallery";
-import Reviews from "../components/Reviews";
 import CartItem from "./CartItem";
 import { ContextApp } from "../context/reducer";
 

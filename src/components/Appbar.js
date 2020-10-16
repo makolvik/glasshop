@@ -52,7 +52,7 @@ export default function Barmenu() {
     const handleScroll = () => {
       const curentScroll = window.scrollY;
       prevScroll.current = curentScroll;
-      prevScroll.current == 0 ? setScroll(false) : setScroll(true);
+      prevScroll.current === 0 ? setScroll(false) : setScroll(true);
       console.log(prevScroll, curScroll);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });

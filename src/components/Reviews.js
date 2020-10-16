@@ -9,9 +9,6 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { ContextApp } from "../context/reducer";
 import Pagination from "@material-ui/lab/Pagination";
-import PaginationItem from "@material-ui/lab/PaginationItem";
-import { MemoryRouter, Route } from "react-router";
-import { Link } from "react-router-dom";
 import { Container } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

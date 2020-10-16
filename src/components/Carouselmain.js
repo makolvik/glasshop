@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 // import Carousel from "react-material-ui-carousel";
-import Carouselitem from "./Carouselitem";
 import Carousel1 from "../img/carousel1.jpg";
 import Carousel3 from "../img/carousel3.jpg";
 
