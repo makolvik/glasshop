@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import Barmenu from "./components/Appbar";
+import Footer from "./components/Footer";
+import Main from "./pages/Main";
+import Glass from "./pages/Glass";
+import Cart from "./pages/Cart";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { initialState, cartReducer, ContextApp } from "./context/reducer";
 
 function App() {
+  const [state, dispatch] = useReducer(cartReducer, initialState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextApp.Provider value={{ state, dispatch }}>
+      <Router>
+        <Barmenu />
+        <Switch>
+          <Route path="/Glass">
+            <Glass />
+          </Route>
+          <Route path="/Cart">
+            <Cart />
+          </Route>
+          <Route path="/Contacts">
+            <Main />
+          </Route>
+          <Route path="/">
+            <Main />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </ContextApp.Provider>
   );
 }
 
