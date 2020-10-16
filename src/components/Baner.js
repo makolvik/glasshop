@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     paddingTop: "28vh",
-    width: "500px",
+    width: "100%",
     color: "white",
     textAlign: "center",
     [theme.breakpoints.down("sm")]: {

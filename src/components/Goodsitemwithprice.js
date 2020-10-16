@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
   text: {
     width: "100%",
-    maxWidth: 500,
+    // maxWidth: 500,
   },
   image: {
     width: "80%",
