@@ -61,51 +61,25 @@ export default function Barmenu() {
     };
   }, [curScroll]);
 
-  const ScrollNavbar = (props) => {
-    // const curScroll = props.scroll;
-    if (curScroll) {
-      return (
-        <div className={classes.root2}>
-          <AppBar className={classes.app} position="static">
-            <Toolbar>
-              <Typography variant="h6" className={classes.title}>
-                Meteor Glasses
-              </Typography>
-              <Button className={classes.button} color="inherit">
-                <NavLink to="/">Main</NavLink>
-              </Button>
-              <Button className={classes.button} color="inherit">
-                <NavLink to="/Glass">Shop</NavLink>
-              </Button>
+  return (
+    <div className={curScroll ? classes.root2 : classes.root1}>
+      <AppBar className={classes.app} position="static">
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            Meteor Glasses
+          </Typography>
+          <Button className={classes.button} color="inherit">
+            <NavLink to="/">Main</NavLink>
+          </Button>
+          <Button className={classes.button} color="inherit">
+            <NavLink to="/Glass">Shop</NavLink>
+          </Button>
 
-              <NavLink to="/Cart">
-                <ShoppingCartOutlinedIcon />
-              </NavLink>
-            </Toolbar>
-          </AppBar>
-        </div>
-      );
-    }
-    return (
-      <div className={classes.root1}>
-        <AppBar className={classes.app} position="static">
-          <Toolbar>
-            <Typography variant="h5" className={classes.title}>
-              Meteor Glasses
-            </Typography>
-            <Button className={classes.button} color="inherit">
-              <NavLink to="/">Main</NavLink>
-            </Button>
-            <Button className={classes.button} color="inherit">
-              <NavLink to="/Glass">Shop</NavLink>
-            </Button>
-            <NavLink to="/Cart">
-              <ShoppingCartOutlinedIcon />
-            </NavLink>
-          </Toolbar>
-        </AppBar>
-      </div>
-    );
-  };
-  return <ScrollNavbar scroll={prevScroll.current} />;
+          <NavLink to="/Cart">
+            <ShoppingCartOutlinedIcon />
+          </NavLink>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
