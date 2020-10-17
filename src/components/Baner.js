@@ -7,25 +7,31 @@ import Baner1 from "../img/baner1.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "500px",
+    height: "auto",
     backgroundImage: `url(${Baner1})`,
     backgroundSize: "Cover",
     backgroundRepeat: "norepeat",
-    [theme.breakpoints.down("sm")]: {
-      backgroundSize: "100%",
-      height: "auto",
+    [theme.breakpoints.down("xs")]: {
+      display: 'none'
+      
     },
   },
   container: {
-    paddingTop: "28vh",
+    padding: "10vh 10vh 10vh 10vh",
     width: "100%",
     color: "white",
     textAlign: "center",
     [theme.breakpoints.down("sm")]: {
-      paddingTop: "4vh",
-      paddingBottom: "4vh",
+      padding: "4vh 10vh 4vh 10vh",
+      
     },
   },
+  text: {
+    fontSize: "1.6rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
+    },
+  }
 }));
 
 export default function Baner(props) {
@@ -33,13 +39,13 @@ export default function Baner(props) {
   return (
     <div className={classes.root}>
       <Container className={classes.container}>
-        <Typography align="left" variant="h6" gutterBottom>
+        <Typography className={classes.text} align="left" variant="h6" gutterBottom>
           The legend pros
         </Typography>
-        <Typography align="left" variant="subtitle1" gutterBottom>
+        <Typography className={classes.text} align="left" variant="subtitle1" gutterBottom>
           High perfomance meets lifestyle
         </Typography>
-        <Button variant="contained" color="secondary">
+        <Button variant="outlined" color="secondary">
           Check it out!
         </Button>
       </Container>

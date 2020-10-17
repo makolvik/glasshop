@@ -9,13 +9,14 @@ import Button from "@material-ui/core/Button";
 import gallery1 from "../img/gallery1.jpg";
 import gallery2 from "../img/gallery2.jpg";
 import gallery3 from "../img/gallery3.jpg";
-import Gallery from "react-grid-gallery";
 import Reviews from "../components/Reviews";
 import { ContextApp } from "../context/reducer";
 import ModalCart from "../modal/ModalCart";
+import Gallery from '../components/Gallery'
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "80%",
+    width: "90%",
     margin: "50px auto 100px auto",
     lineHeight: "1.8em",
 
@@ -52,46 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const IMAGES = [
-  {
-    src: gallery1,
-    thumbnail: gallery1,
-    thumbnailWidth: 320,
-    thumbnailHeight: 150,
-
-    isSelected: true,
-    caption: "After Rain (Jeshu John - designerspics.com)",
-  },
-
-  {
-    src: gallery2,
-    thumbnail: gallery2,
-    thumbnailWidth: 320,
-    thumbnailHeight: 150,
-
-    tags: [
-      { value: "Ocean", title: "Ocean" },
-      { value: "People", title: "People" },
-    ],
-    caption: "Boats (Jeshu John - designerspics.com)",
-  },
-
-  {
-    src: gallery3,
-    thumbnail: gallery3,
-    thumbnailWidth: 320,
-    thumbnailHeight: 150,
-  },
-  {
-    src: gallery1,
-    thumbnail: gallery1,
-    thumbnailWidth: 320,
-    thumbnailHeight: 150,
-
-    isSelected: true,
-    caption: "After Rain (Jeshu John - designerspics.com)",
-  },
-];
+const IMAGES = [  gallery1,gallery2,gallery3];
 
 const items = {
   title: "FIRE MIRROR COLORBOOST  POLARIZED SMOKE LENS",
@@ -254,7 +216,8 @@ export default function Item() {
           </Container>
         </Grid>
         <Grid item xs={12}>
-          <Gallery images={IMAGES}></Gallery>
+          <Gallery  images={IMAGES}></Gallery>
+          <image src={IMAGES[0]} alt='d'/>
         </Grid>
         <Grid item xs={12}>
           <hr className={classes.hritem} />

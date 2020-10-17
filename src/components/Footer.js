@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     [theme.breakpoints.down("md")]: {
-      marginTop: "10px",
+      marginTop: "5px",
     },
     padding: theme.spacing(2),
     textAlign: "center",

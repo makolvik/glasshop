@@ -7,8 +7,7 @@ import gallery1 from "../img/gallery1.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 800,
-    textAlign: "center",
+        textAlign: "center",
     margin: "50px auto 100px auto",
 
     "& > *": {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   item: {
-    marginTop: "10px",
+    margin: "5px",
   },
   image: {
     width: "100%",
@@ -41,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
     marginTop: "10px",
   },
+  buttonText : {
+    fontWeight: 600
+
+  }
 }));
 
 export default function CartItem(props) {
@@ -67,7 +70,10 @@ export default function CartItem(props) {
             className={classes.buttonquant}
             id={props.id}
           >
-            +
+            <Typography className={classes.buttonText}>
+              +
+            </Typography>
+            
           </Button>
           <Typography>{props.quant}</Typography>
           <Button
@@ -76,14 +82,17 @@ export default function CartItem(props) {
             className={classes.buttonquant}
             id={props.id}
           >
-            -
+            <Typography className={classes.buttonText}>
+              -
+            </Typography>
+            
           </Button>{" "}
         </div>
       </Grid>
-      <Grid item xs={6} sm={2}>
+      <Grid item xs={6} sm={3}>
         <Typography>{props.price}$</Typography>
       </Grid>
-      <Grid item xs={6} sm={2}>
+      <Grid item xs={6} sm={3}>
         <Typography>{props.total}$</Typography>
       </Grid>
       <Grid item xs={12}>

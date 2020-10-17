@@ -31,10 +31,11 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   modal: {
+    
     display: "flex",
     alignItems: "right",
     justifyContent: "right",
-    width: "400px",
+    width: "450px",
     backgroundColor: "black",
     color: "white",
     [theme.breakpoints.down("sm")]: {
@@ -46,6 +47,10 @@ const useStyles = makeStyles((theme) => ({
     color: "red",
     textDecoration: "line-through",
   },
+  cartConreiner: {
+    margin: 20,
+    width: '85%'
+  }
 }));
 
 export default function ModalCart(props) {
@@ -77,7 +82,7 @@ export default function ModalCart(props) {
     >
       <Fade in={props.open}>
         <div>
-          <Grid container>
+          <Grid container className={classes.cartConreiner}>
             {state.cart.map((item, index) => {
               return (
                 <ModalItem
@@ -98,7 +103,7 @@ export default function ModalCart(props) {
               <Grid xs={6}>
                 <Button
                   onClick={() => props.handleClose()}
-                  variant="contained"
+
                   color="secondary"
                   style={{ width: "100%", margin: "10px 0 10px 0" }}
                 >
@@ -108,11 +113,11 @@ export default function ModalCart(props) {
               <Grid xs={6}>
                 <Link to="/Cart">
                   <Button
-                    variant="contained"
-                    color="secondary"
-                    style={{ width: "100%", margin: "10px 0 10px 0" }}
+                   variant="contained" color="primary"
+                    style={{ width: "100%", margin: "10px 5px 10px 5px  " }}
                   >
-                    TO CART
+                   <Typography variant="button">TO CART
+                     </Typography>
                   </Button>
                 </Link>
               </Grid>

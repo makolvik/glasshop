@@ -52,6 +52,10 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "1px solid rgba(255, 255, 255, 0.3)",
     color: "white",
   },
+  buttonText: {
+    fontWeight: 600,
+
+  }
 }));
 
 export default function ModalItem(props) {
@@ -66,17 +70,19 @@ export default function ModalItem(props) {
           Legend PRo/Matte Black and Red/ Fire Mirror/{" "}
         </Typography>
       </Grid>
-      <Grid xs={2}>
-        <Typography align="center" variant="subtitle1" className={classes.text}>
-          {props.price}
+      <Grid xs={1}>
+        <Typography align="center" variant="subtitle1" style={{fontSize: '15px'}}>
+          {props.price}$
         </Typography>
       </Grid>
-      <Grid style={{ display: "flex" }} xs={2}>
+      <Grid style={{ display: "flex",  }} xs={3}>
         <div
           style={{
+            width: '100%',
             display: "flex",
+            justifyContent: 'space-around',
             height: "30px",
-            marginTop: "10px",
+            marginTop: "5px",
           }}
         >
           <Button
@@ -85,7 +91,8 @@ export default function ModalItem(props) {
             className={classes.buttonquant}
             onClick={(event) => props.handlerAdd(event)}
           >
-            +
+             <Typography className={classes.buttonText}>
+                +</Typography>
           </Button>
           <Typography>{props.quant}</Typography>
           <Button
@@ -94,7 +101,8 @@ export default function ModalItem(props) {
             className={classes.buttonquant}
             onClick={(event) => props.handlerMinus(event)}
           >
-            -
+              <Typography className={classes.buttonText}>
+                - </Typography>
           </Button>{" "}
         </div>
       </Grid>

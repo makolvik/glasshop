@@ -9,15 +9,13 @@ import { ContextApp } from "../context/reducer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    width: "80%",
     textAlign: "center",
     margin: "50px auto 100px auto",
 
     "& > *": {
       margin: 0,
-      //   backgroundColor: "white",
       width: "100%",
-      //   height: 200,
       borderRadius: 0,
     },
   },
@@ -29,9 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
   total: {
     color: "darkred",
-
     marginTop: "20px",
-    backgroundColor: "lightgrey",
+    // backgroundColor:'#e9e9e9y',
   },
   hritem: {
     border: 0,
@@ -82,7 +79,7 @@ export default function Cart() {
           ))}
           <Grid container className={classes.total} item xs={12}>
             <Grid item xs={8}>
-              <Typography style={{ fontSize: "large" }}>
+              <Typography variant="h3" style={{ fontSize: "26px" }}>
                 Total: {state.total}$
               </Typography>
             </Grid>
