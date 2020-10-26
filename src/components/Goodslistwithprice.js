@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Goodsitemwithprice from "../components/Goodsitemwithprice";
-import glasses from "../data/glasses";
 import Price1 from "../img/price1.jpg";
 import Price2 from "../img/price2.jpg";
 import Price3 from "../img/price3.jpg";
@@ -24,34 +23,34 @@ const useStyles = makeStyles((theme) => ({
   },
   item: {},
 }));
-const items2 = <glasses />;
 const items = [
   {
+    id: 1,
     title: "Monarch",
     image: Price1,
     price: "300$",
     rate: 4,
     prevprice: "500$",
   },
-  { title: "Saker", image: Price2, price: "300$", rate: 4, prevprice: "500$" },
-  { title: "WES", image: Price3, price: "300$", rate: 4, prevprice: "500$" },
+  { id: 2, title: "Saker", image: Price2, price: "300$", rate: 4, prevprice: "500$" },
+  { id: 3, title: "WES", image: Price3, price: "300$", rate: 4, prevprice: "500$" },
   {
-    title: "Stockholm",
+    id: 4, title: "Stockholm",
     image: Price4,
     price: "300$",
     rate: 4,
     prevprice: "500$",
   },
-  { title: "Mel", image: Price5, price: "300$", rate: 4, prevprice: "0" },
+  { id: 5, title: "Mel", image: Price5, price: "300$", rate: 4, prevprice: "0" },
   {
-    title: "Jackson",
+    id: 6, title: "Jackson",
     image: Price6,
     price: "300$",
     rate: 4,
     prevprice: "500$",
   },
   {
-    title: "Madness",
+    id: 7, title: "Madness",
     image: Price7,
     price: "300$",
     rate: 4,
@@ -78,6 +77,7 @@ export default function Goodslist() {
               price={item.price}
               rate={item.rate}
               prevprice={item.prevprice}
+              id={item.id}
             />
           </Grid>
         ))}

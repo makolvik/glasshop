@@ -34,7 +34,7 @@ export default function Footer() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container spacing={1}>
         <Grid item xs={12} md={6}>
           <Paper elevation={0} className={classes.paper}>
             <Container>
@@ -71,7 +71,7 @@ export default function Footer() {
                 </Grid>
               </Grid>
               <Typography
-                style={{ fontSize: "10px", marginTop: "40px" }}
+                style={{ fontSize: "10px", marginTop: "30px" }}
                 align="left"
               >
                 © 2020 Cassette Optics. POS and Ecommerce by Shopify POS and

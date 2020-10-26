@@ -33,7 +33,7 @@ export default function Goodslistitem(props) {
   const classes = useStyles();
 
   return (
-    <Link to="/Glass">
+    <Link to={`/Glass/${props.id}`}>
       <Paper elevation={0} className={classes.paper}>
         <div style={{ height: "auto" }}>
           <img className={classes.image} src={props.image} />

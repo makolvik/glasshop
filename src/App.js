@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Main from "./pages/Main";
 import Glass from "./pages/Glass";
 import Cart from "./pages/Cart";
+import Shop from './pages/Shop'
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -16,11 +17,13 @@ function App() {
       <Router>
         <Barmenu />
         <Switch>
-          <Route path="/Glass">
-            <Glass />
+          <Route path="/Glass/:id" children={<Glass/>}>
           </Route>
           <Route path="/Cart">
             <Cart />
+          </Route>
+          <Route path="/Shop">
+            <Shop />
           </Route>
           <Route path="/Contacts">
             <Main />

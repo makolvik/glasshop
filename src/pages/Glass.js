@@ -1,4 +1,5 @@
-import React, {  useState,  useContext } from "react";
+import React, { useState, useContext } from "react";
+import { useParams } from "react-router";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Rating from "@material-ui/lab/Rating";
@@ -6,13 +7,22 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
-import gallery1 from "../img/gallery1.jpg";
-import gallery2 from "../img/gallery2.jpg";
-import gallery3 from "../img/gallery3.jpg";
+
 import Reviews from "../components/Reviews";
 import { ContextApp } from "../context/reducer";
 import ModalCart from "../modal/ModalCart";
 import Gallery from '../components/Gallery'
+
+import Price1 from "../img/price1.jpg";
+import Price2 from "../img/price2.jpg";
+import Price3 from "../img/price3.jpg";
+import Price4 from "../img/price4.jpg";
+import Price5 from "../img/price5.jpg";
+import Price6 from "../img/price6.jpg";
+import Price7 from "../img/price7.jpg";
+import gallery1_1 from "../img/gallery1_1.jpg";
+import gallery1_2 from "../img/gallery1_2.jpg";
+import gallery1_3 from "../img/gallery1_3.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,47 +63,96 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const IMAGES = [  gallery1,gallery2,gallery3];
-
-const items = {
-  title: "FIRE MIRROR COLORBOOST  POLARIZED SMOKE LENS",
-  price: 450,
-  art: 125,
-  prevprice: 500,
-  id: 21322,
-  itemrating: {
-    total: 43,
-    rating: 4,
-    comments: [
-      {
-        date: "22 / 10 / 2020",
-        author: "Dan Balan0",
-        title: "Rocks",
-        text:
-          "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-      },
-      {
-        date: "22 / 10 / 2020",
-        author: "Dan Balan0",
-        title: "Rocks",
-        text:
-          "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-      },
-    ],
+const items = [
+  {
+    id: 1,
+    title: "Monarch",
+    image: Price1,
+    price: 300,
+    rate: 4,
+    prevprice: 500,
+    images: [gallery1_1, gallery1_2, gallery1_3],
+    reviews: {
+      total: 43,
+      comments: [
+        {
+          date: "22 / 10 / 2020",
+          author: "Dan Balan0",
+          rating: 4,
+          title: "Rocks",
+          text:
+            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
+        },
+        {
+          date: "22 / 10 / 2020",
+          rating: 5,
+          author: "Dan Balan0",
+          title: "Rocks",
+          text:
+            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
+        },
+        {
+          date: "22 / 10 / 2020",
+          rating: 5,
+          author: "Dan Balan0",
+          title: "Rocks",
+          text:
+            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
+        },
+        {
+          date: "22 / 10 / 2020",
+          rating: 5,
+          author: "Dan Balan0",
+          title: "Rocks",
+          text:
+            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
+        },
+        {
+          date: "22 / 10 / 2020",
+          rating: 5,
+          author: "Dan Balan0",
+          title: "Rocks",
+          text:
+            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
+        },
+        {
+          date: "22 / 10 / 2020",
+          rating: 5,
+          author: "Dan Balan0",
+          title: "Rocks",
+          text:
+            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
+        },
+        {
+          date: "22 / 10 / 2020",
+          rating: 5,
+          author: "Dan Balan0",
+          title: "Rocks",
+          text:
+            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
+        },
+      ],
+    },
   },
-};
+  
+];
 
-export default function Item() {
+
+export default function Glass(props) {
+  let { id } = useParams();
+  id = items.findIndex( it => it.id === Number(id));
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const { state, dispatch, itemState } = useContext(ContextApp);
-
+  const { state, dispatch } = useContext(ContextApp);
   const [localState, setState] = useState(items);
 
-  console.log(localState);
+  const reviewHandler = (stateReview) => { 
+    items[id].reviews.comments.push(stateReview);
+  };
 
   const handleOpen = () => {
-    dispatch({ type: "add_item", payload: localState });
+
+    dispatch({ type: "add_item", payload: localState[id] });
     setOpen(true);
   };
 
@@ -110,16 +169,18 @@ export default function Item() {
     <div className={classes.root}>
       <ModalCart open={open} handleClose={handleClose} />
 
-      <Grid container spacing={3}>
+      <Grid container spacing={1}>
         <Grid item xs={12} md={6}>
-          <img className={classes.image} src={gallery2} />
+          <img className={classes.image} src={items[id].image} />
         </Grid>
         <Grid item xs={12} md={6}>
           <Container>
-            <Typography style={{ lineHeight: "1.8em" }}>
-              {items.title}
+            <Typography style={{ lineHeight: "1.8em" ,fontWeight: '600', fontSize: '1.5rem'}}>
+              {items[id].title}
             </Typography>
-            <Box
+            <Grid container spacing={1}>
+              <Grid>
+                 <Box
               style={{
                 display: "flex",
                 justifyContent: "left",
@@ -128,11 +189,14 @@ export default function Item() {
             >
               <Rating
                 name="read-only"
-                value={items.itemrating.rating}
+                value={items[id].rate}
                 readOnly
                 size="small"
               />
-              <Typography
+              </Box>
+              </Grid>
+              <Grid>
+                 <Typography
                 variant="h6"
                 gutterBottom
                 className={classes.text}
@@ -143,16 +207,18 @@ export default function Item() {
                   lineHeight: "1.8em",
                 }}
               >
-                {items.itemrating.reviews} reviews
+                {items[id].reviews.total} reviews
               </Typography>
-            </Box>
+              </Grid>
+              </Grid>
+
             <Typography style={{ lineHeight: "1.8em" }}>
               See More Clearly with Cassette ColorBoost Lenses!
             </Typography>
-            <Typography style={{ lineHeight: "1.8em" }}>
-              {items.price}${" "}
+            <Typography style={{ lineHeight: "1.8em" , fontWeight: '600', fontSize: '1.2rem' }}>
+              {items[id].price}${" "}
               <span>
-                <span className={classes.prevprice}> {items.prevprice}$</span>{" "}
+                <span className={classes.prevprice}> {items[id].prevprice}$</span>{" "}
               </span>
             </Typography>
             <Button
@@ -216,13 +282,13 @@ export default function Item() {
           </Container>
         </Grid>
         <Grid item xs={12}>
-          <Gallery  images={IMAGES}></Gallery>
-          <image src={IMAGES[0]} alt='d'/>
+          <Gallery images={items[id].images}></Gallery>
+          <image src={items[id].images[0]} alt='d' />
         </Grid>
         <Grid item xs={12}>
           <hr className={classes.hritem} />
 
-          <Reviews />
+          <Reviews comments={items[id].reviews.comments} reviewHandler={reviewHandler}/>
         </Grid>
       </Grid>
     </div>

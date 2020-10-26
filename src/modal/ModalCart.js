@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },
-    minWidth: 800,
+    minWidth: 300,
     margin: "50px auto 100px auto",
     lineHeight: "1.8em",
 
@@ -105,7 +105,7 @@ export default function ModalCart(props) {
                   onClick={() => props.handleClose()}
 
                   color="secondary"
-                  style={{ width: "100%", margin: "10px 0 10px 0" }}
+                  style={{ width: "80%", margin: "10px 0 10px 0" }}
                 >
                   BACK
                 </Button>
@@ -114,7 +114,7 @@ export default function ModalCart(props) {
                 <Link to="/Cart">
                   <Button
                    variant="contained" color="primary"
-                    style={{ width: "100%", margin: "10px 5px 10px 5px  " }}
+                    style={{ width: "80%", margin: "10px 5px 10px 5px  " }}
                   >
                    <Typography variant="button">TO CART
                      </Typography>

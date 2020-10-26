@@ -34,22 +34,25 @@ export default function Review(props) {
         <Grid item>
           <Avatar />
         </Grid>
-        <Grid container spacing={2} item xs={6}>
-          <Grid style={{ paddingBottom: "0px", display: "flex" }} item xs={12}>
+        <Grid container spacing={2} item xs={12} sm={4}>
+          <Grid style={{ paddingBottom: "0px", display: "flex" }} item xs={12} sm={6}>
             <Rating
               name="read-only"
               value={item.rating}
               readOnly
               size="small"
             />
+            </Grid>
+            <Grid style={{ paddingBottom: "0px", display: "flex" }} item xs={12} sm={6}>
             <Typography
               style={{ padding: "0px", fontSize: "0.5rem" }}
               variant="caption"
             >
               {item.date}
             </Typography>
+         
           </Grid>
-          <Grid style={{ padding: "0px" }} item xs={12}>
+          <Grid style={{ padding: "0px" }} item xs={12} >
             <Typography variant="subtitle1">{item.author}</Typography>
           </Grid>
         </Grid>

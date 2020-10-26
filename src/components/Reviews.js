@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   pagination: {
-    width: "300px",
+    width: "auto",
     margin: "auto",
     marginTop: "30px",
     "& > * + *": {
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Reviews(props) {
   const classes = useStyles();
-  const { state, dispatch } = useContext(ContextApp);
+  const [ state, setReviewState ] = useState(props.comments);
   const [displayForm, setDisplay] = useState(false);
   const [page, setpage] = useState(1);
   const [reviewState, setReview] = useState({
@@ -56,6 +56,8 @@ export default function Reviews(props) {
   });
   const submitHandler = (event) => {
     event.preventDefault();
+    const handler = props.reviewHandler;
+    handler(reviewState);
     // const newState = {
     //   ...itemState,
     //   itemrating: {
@@ -64,7 +66,7 @@ export default function Reviews(props) {
     //   },
     // };
     // itemState = newState;
-    dispatch({ type: "add_comments", payload: reviewState });
+    // dispatch({ type: "add_comments", payload: reviewState });
     setReview({
       title: "",
       text: "",
@@ -140,13 +142,13 @@ export default function Reviews(props) {
           </form>
         </Grid>
       )}
-      {state.itemState[0].comments.slice(page * 5 - 5, page * 5).map((item) => {
+      {state.slice(page * 5 - 5, page * 5).map((item) => {
         return <Review item={item} />;
       })}
       <Container maxWidth="sm">
         <Pagination
           className={classes.pagination}
-          count={Math.ceil(state.itemState[0].comments.length / 5)}
+          count={Math.ceil(state.length / 5)}
           page={page}
           onChange={handleChange}
         />

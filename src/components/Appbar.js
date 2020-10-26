@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import ModalMenu from '../modal/ModalMenu';
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,16 +39,38 @@ const useStyles = makeStyles((theme) => ({
       padding: "0 10px 0 10px",
     },
   },
+  
   button: {
+    display: 'block',
     fontSize: "0.8rem",
+    [theme.breakpoints.down("sm")]: {
+      display: 'none'
+    },
   },
+  burger: {
+    display: 'none',
+    [theme.breakpoints.down("sm")]: {
+      display: 'block'
+    }
+  },
+  burgerItem: {
+    width: '25px',
+  height:' 5px',
+  backgroundColor: 'lightgrey',
+  margin:' 6px 0'
+  }
 }));
 
 export default function Barmenu() {
   const classes = useStyles();
   const prevScroll = useRef(0);
   const [curScroll, setScroll] = useState(false);
+  const [menuModal, setMenuModal] = useState(false);
 
+  const menuHandler = () => {
+    console.log('c')
+    menuModal? setMenuModal(false): setMenuModal(true);
+  }
   useEffect(() => {
     const handleScroll = () => {
       const curentScroll = window.scrollY;
@@ -68,18 +91,30 @@ export default function Barmenu() {
           <Typography variant="h6" className={classes.title}>
             Meteor Glasses
           </Typography>
-          <Button className={classes.button} color="inherit">
+         
+            <Button className={classes.button} color="inherit">
             <NavLink to="/">Main</NavLink>
           </Button>
           <Button className={classes.button} color="inherit">
-            <NavLink to="/Glass">Shop</NavLink>
+            <NavLink to="/Shop">Shop</NavLink>
           </Button>
-
-          <NavLink to="/Cart">
+          <Button className={classes.button}>
+            <NavLink to="/Cart">
             <ShoppingCartOutlinedIcon />
           </NavLink>
+          </Button>
+          
+        
+          
+          <div className={classes.burger} onClick={()=> {menuHandler()}}>
+          <div className={classes.burgerItem}></div>
+          <div className={classes.burgerItem}></div>
+          <div className={classes.burgerItem}></div>
+
+          </div>
         </Toolbar>
       </AppBar>
+      <ModalMenu open={menuModal} handleClose={menuHandler} />
     </div>
   );
 }
