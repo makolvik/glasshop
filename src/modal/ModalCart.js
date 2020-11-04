@@ -10,6 +10,45 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { ContextApp } from "../context/reducer";
 
+import Price1 from "../img/price1.jpg";
+import Price2 from "../img/price2.jpg";
+import Price3 from "../img/price3.jpg";
+import Price4 from "../img/price4.jpg";
+import Price5 from "../img/price5.jpg";
+import Price6 from "../img/price6.jpg";
+import Price7 from "../img/price7.jpg";
+
+const images = [
+  {
+    id: 1,
+    image: Price2,
+  },
+  {
+    id: 2,
+    image: Price1,
+  },
+  {
+    id: 3,
+    image: Price3,
+  },
+  {
+    id: 4,
+    image: Price4,
+  },
+  {
+    id: 5,
+    image: Price5,
+  },
+  {
+    id: 6,
+    image: Price6,
+  },
+  {
+    id: 7,
+    image: Price7,
+  },
+];
+
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("md")]: {
@@ -31,7 +70,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   modal: {
-    
     display: "flex",
     alignItems: "right",
     justifyContent: "right",
@@ -49,8 +87,8 @@ const useStyles = makeStyles((theme) => ({
   },
   cartConreiner: {
     margin: 20,
-    width: '85%'
-  }
+    width: "85%",
+  },
 }));
 
 export default function ModalCart(props) {
@@ -92,18 +130,26 @@ export default function ModalCart(props) {
                   total={item.total}
                   handlerAdd={handlerAdd}
                   handlerMinus={handlerMinus}
+                  image={
+                    images[images.findIndex((glass) => glass.id == item.id)]
+                      .image
+                  }
                 />
               );
             })}
 
-            <Grid xs={12}>
-              <Typography>Sub total: {state.total}$</Typography>
+            <Grid xs={12} style={{ display: "flex" }}>
+              <Typography style={{ alignSelf: "center" }}>
+                Sub total:{" "}
+              </Typography>
+              <Typography style={{ fontWeight: "bold", fontSize: "25px" }}>
+                {state.total}$
+              </Typography>
             </Grid>
             <Grid container xs={12}>
               <Grid xs={6}>
                 <Button
                   onClick={() => props.handleClose()}
-
                   color="secondary"
                   style={{ width: "80%", margin: "10px 0 10px 0" }}
                 >
@@ -113,11 +159,11 @@ export default function ModalCart(props) {
               <Grid xs={6}>
                 <Link to="/Cart">
                   <Button
-                   variant="contained" color="primary"
+                    variant="contained"
+                    color="primary"
                     style={{ width: "80%", margin: "10px 5px 10px 5px  " }}
                   >
-                   <Typography variant="button">TO CART
-                     </Typography>
+                    <Typography variant="button">TO CART</Typography>
                   </Button>
                 </Link>
               </Grid>

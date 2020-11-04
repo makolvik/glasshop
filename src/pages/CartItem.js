@@ -7,7 +7,7 @@ import gallery1 from "../img/gallery1_1.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-        textAlign: "center",
+    textAlign: "center",
     margin: "50px auto 100px auto",
 
     "& > *": {
@@ -40,10 +40,9 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
     marginTop: "10px",
   },
-  buttonText : {
-    fontWeight: 600
-
-  }
+  buttonText: {
+    fontWeight: 600,
+  },
 }));
 
 export default function CartItem(props) {
@@ -52,7 +51,7 @@ export default function CartItem(props) {
   return (
     <Grid className={classes.item} container xs={12} spacing={2}>
       <Grid xs={12} sm={3}>
-        <img className={classes.image} src={gallery1} />
+        <img className={classes.image} src={props.image} />
       </Grid>
 
       <Grid item xs={12} sm={3}>
@@ -70,10 +69,7 @@ export default function CartItem(props) {
             className={classes.buttonquant}
             id={props.id}
           >
-            <Typography className={classes.buttonText}>
-              +
-            </Typography>
-            
+            <Typography className={classes.buttonText}>+</Typography>
           </Button>
           <Typography>{props.quant}</Typography>
           <Button
@@ -82,19 +78,19 @@ export default function CartItem(props) {
             className={classes.buttonquant}
             id={props.id}
           >
-            <Typography className={classes.buttonText}>
-              -
-            </Typography>
-            
+            <Typography className={classes.buttonText}>-</Typography>
           </Button>{" "}
         </div>
       </Grid>
-      <Grid item xs={6} sm={3}>
-        <Typography>{props.price}$</Typography>
+      <Grid container xs={12} sm={6}>
+        <Grid item xs={6}>
+          <Typography>{props.price}$</Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <Typography>{props.total}$</Typography>
+        </Grid>
       </Grid>
-      <Grid item xs={6} sm={3}>
-        <Typography>{props.total}$</Typography>
-      </Grid>
+
       <Grid item xs={12}>
         <hr className={classes.hritem} />
       </Grid>

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Review from "./Review";
@@ -7,7 +7,6 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { ContextApp } from "../context/reducer";
 import Pagination from "@material-ui/lab/Pagination";
 import { Container } from "@material-ui/core";
 
@@ -44,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Reviews(props) {
   const classes = useStyles();
-  const [ state, setReviewState ] = useState(props.comments);
+  const [state, setReviewState] = useState(props.comments);
+  console.log(state, "review");
   const [displayForm, setDisplay] = useState(false);
   const [page, setpage] = useState(1);
   const [reviewState, setReview] = useState({

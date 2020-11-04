@@ -54,8 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonText: {
     fontWeight: 600,
-
-  }
+  },
 }));
 
 export default function ModalItem(props) {
@@ -63,7 +62,7 @@ export default function ModalItem(props) {
   return (
     <Grid xs={12} style={{ marginTop: "15px" }} container>
       <Grid xs={3}>
-        <img className={classes.image} src={gallery2} />
+        <img className={classes.image} src={props.image} />
       </Grid>
       <Grid style={{ paddingLeft: "5px" }} xs={5}>
         <Typography variant="subtitle1" className={classes.text}>
@@ -71,16 +70,20 @@ export default function ModalItem(props) {
         </Typography>
       </Grid>
       <Grid xs={1}>
-        <Typography align="center" variant="subtitle1" style={{fontSize: '15px'}}>
+        <Typography
+          align="center"
+          variant="subtitle1"
+          style={{ fontSize: "15px" }}
+        >
           {props.price}$
         </Typography>
       </Grid>
-      <Grid style={{ display: "flex",  }} xs={3}>
+      <Grid style={{ display: "flex" }} xs={3}>
         <div
           style={{
-            width: '100%',
+            width: "100%",
             display: "flex",
-            justifyContent: 'space-around',
+            justifyContent: "space-around",
             height: "30px",
             marginTop: "5px",
           }}
@@ -91,8 +94,7 @@ export default function ModalItem(props) {
             className={classes.buttonquant}
             onClick={(event) => props.handlerAdd(event)}
           >
-             <Typography className={classes.buttonText}>
-                +</Typography>
+            <Typography className={classes.buttonText}>+</Typography>
           </Button>
           <Typography>{props.quant}</Typography>
           <Button
@@ -101,8 +103,7 @@ export default function ModalItem(props) {
             className={classes.buttonquant}
             onClick={(event) => props.handlerMinus(event)}
           >
-              <Typography className={classes.buttonText}>
-                - </Typography>
+            <Typography className={classes.buttonText}>- </Typography>
           </Button>{" "}
         </div>
       </Grid>

@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Goodslist from "../components/Goodslist";
 import Goodsitemwithprice from "../components/Goodslistwithprice";
+import Shop from "./Shop";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,8 +39,11 @@ export default function Main() {
         <Baner />
       </Paper>
       <Paper elevation={0} id="Top">
-        <Goodsitemwithprice />
+        <Shop />
       </Paper>
+      {/* <Paper elevation={0} id="Top">
+        <Goodsitemwithprice />
+      </Paper> */}
       <Paper elevation={0}>
         <Container>
           <Typography align="center" variant="h5">

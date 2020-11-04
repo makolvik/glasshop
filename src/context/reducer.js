@@ -6,149 +6,7 @@ export const initialState = {
   cart: [],
   total: 0,
   order: [],
-  itemState: [
-    {
-      title: "FIRE MIRROR COLORBOOST  POLARIZED SMOKE LENS",
-      price: 450,
-      art: 125,
-      prevprice: 500,
-      comments: [
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Baswerwerwerlan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Bawrwerwerlan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Bawerwerlan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Bafggfhfghlan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Bafghfghlan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Balan0",
-          title: "Rocks",
-          rating: 4,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-        {
-          date: "22/10 /2020",
-          author: "Dan Baghjghkghjkslan0",
-          title: "Rocks",
-          rating: 2,
-          text:
-            "Once I got the legend pro on my hand The glasses feel sturdy and look good. Don't know how well the scratch resistance is yet, but they provided you a lifetime warranty so I'm not too worry about it.",
-        },
-      ],
-      id: 21322,
-      itemrating: {
-        total: 43,
-        rating: 4,
-      },
-    },
-  ],
+  id: 21322,
 };
 
 export const cartReducer = (state, action) => {
@@ -159,10 +17,8 @@ export const cartReducer = (state, action) => {
         quant: 1,
         total: action.payload.price,
       };
-
-      const currart = newitem.art;
-      console.log(currart);
-      const index = state.cart.findIndex((x) => x.art === currart);
+      const currart = newitem.id;
+      const index = state.cart.findIndex((x) => x.id === currart);
       if (index < 0) {
         return {
           ...state,

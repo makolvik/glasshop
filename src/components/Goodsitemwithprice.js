@@ -61,7 +61,7 @@ export default function Goodslistitem(props) {
                 <span className={classes.prevprice}>{props.prevprice}</span>{" "}
               </span>
             )}
-            {props.price}
+            {props.price}$
           </Typography>
         </div>
       </Paper>
