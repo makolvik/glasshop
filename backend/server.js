@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 require("dotenv").config();
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors());
@@ -33,9 +33,9 @@ connection.once("open", () => {
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "build")));
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
+  app.use(express.static(path.join(__dirname, "../build")));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "build", "index.html"));
+    res.sendFile(path.join(__dirname, "..", "build", "index.html"));
   });
 }
 
