@@ -110,7 +110,6 @@ export default function Glass(props) {
       .catch((err) => console.log(err));
     console.log(localState, "fetch");
   };
-
   useEffect(() => {
     fetchState();
   }, []);
