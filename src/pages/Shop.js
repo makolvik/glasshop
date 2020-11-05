@@ -59,7 +59,7 @@ export default function Shop() {
   const classes = useStyles();
   const [state, setState] = useState(null);
   useEffect(() => {
-    axios.get("https://damp-journey-94116.herokuapp.com/Glass").then((res) => {
+    axios.get("/Glass").then((res) => {
       setState(res.data);
       console.log(res);
     });
