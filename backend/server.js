@@ -13,12 +13,15 @@ app.use(express.json());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-});
+// process.env.MONGODB_URI;
+mongoose.connect(
+  "mongodb+srv://admin:admin@cluster0.svtir.mongodb.net/DB_test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  }
+);
 const connection = mongoose.connection;
 
 const glassesRouter = require("./routes/glasses");
