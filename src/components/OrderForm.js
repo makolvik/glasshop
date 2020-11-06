@@ -75,7 +75,7 @@ export default function Glass(props) {
       order: state,
     };
     axios
-      .post("http://localhost:8000/Order/", order)
+      .post("/Order", order)
       .then(console.log(order))
       .then((response) => console.log(response))
       .then(dispatch({ type: "send_order" }))

@@ -128,7 +128,7 @@ export default function Glass(props) {
       },
     };
     axios
-      .post("http://localhost:8000/Glass/addreview", reqBody)
+      .post("/Glass/addreview", reqBody)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
     // items[id].reviews.comments.push(stateReview);
